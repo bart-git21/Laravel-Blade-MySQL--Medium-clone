@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('content');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->timestamp('published_at')->nillable();
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
