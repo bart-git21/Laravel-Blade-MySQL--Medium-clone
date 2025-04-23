@@ -14,6 +14,9 @@ class PostController extends Controller
     public function index()
     {
         $categories = Category::get();
+
+        dump($categories);
+        
         return view('dashboard', compact('categories'));
     }
 
