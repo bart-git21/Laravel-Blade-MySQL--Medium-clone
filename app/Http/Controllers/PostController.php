@@ -15,9 +15,9 @@ class PostController extends Controller
     {
         $categories = Category::get();
 
-        dump($categories);
-        
-        return view('dashboard', compact('categories'));
+        return view('dashboard', [
+            'categories' => $categories
+        ]);
     }
 
     /**
