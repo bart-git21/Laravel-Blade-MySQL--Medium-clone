@@ -23,15 +23,15 @@
 
             <div class="mt-8 text-gray-900">
                 @foreach ($posts as $post)
-                    <div class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
+                    <div
+                        class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
                         <div class="p-5 flex-1">
                             <a href="#">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021</h5>
+                                    {{$post->title}}
+                                </h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest
-                                enterprise technology acquisitions of 2021 so far, in reverse chronological
-                                order.</p>
+                            <div class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$post->content}}</div>
                             <a href="#"
                                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Read more
@@ -43,7 +43,8 @@
                             </a>
                         </div>
                         <a href="#">
-                            <img class="w-48 h-48 object-cover rounded-r-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                            <img class="w-48  object-cover rounded-r-lg"
+                                src="{{ $post->image }}" alt="" />
                         </a>
                     </div>
                 @endforeach
