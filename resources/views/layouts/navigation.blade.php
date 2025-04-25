@@ -12,7 +12,7 @@
             </div>
 
             <div class="flex">
-                <a href="/test" class="flex items-center">
+                <a href="{{ route('post.create') }}" class="flex items-center">
                     <x-primary-button>Create post</x-primary-button>
                 </a>
 
