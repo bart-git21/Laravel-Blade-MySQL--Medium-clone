@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderByDesc('created_at')->cursorPaginate(5);
-        return view('dashboard', [
+        return view('posts.index', [
             'posts' => $posts,
         ]);
     }
