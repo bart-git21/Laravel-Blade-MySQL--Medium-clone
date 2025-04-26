@@ -10,6 +10,13 @@
                             :value="old('title')" required autofocus />
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
+                    <!-- Content -->
+                    <div class="mt-4">
+                        <x-input-label for="content" :value="__('Content')" />
+                        <x-textarea-input id="content" class="block mt-1 w-full" name="content"
+                            :value="old('content')" required />
+                        <x-input-error :messages="$errors->get('content')" class="mt-2" />
+                    </div>
                 </form>
             </div>
         </div>
