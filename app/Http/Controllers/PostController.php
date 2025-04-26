@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -33,12 +35,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request->all());
         $validated = $request->validate([
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
             'title' => 'required',
             'content' => 'required',
             'category_id' => ['required', 'exists:categories,id'],
+            'published_at' => ['nullable', 'datetime'],
         ]);
     }
 
