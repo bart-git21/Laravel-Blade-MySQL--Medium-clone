@@ -8,14 +8,14 @@
                     <div>
                         <x-input-label for="image" :value="__('Image')" />
                         <x-text-input id="image" class="block mt-1 w-full" type="file" name="image"
-                            :value="old('image')"/>
+                            :value="old('image')" />
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
                     <!-- Title -->
                     <div class="mt-4">
                         <x-input-label for="title" :value="__('Title')" />
                         <x-text-input id="title" class="block mt-1 w-full" type="text" name="title"
-                            :value="old('title')" required autofocus />
+                            :value="old('title')" autofocus />
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
                     <!-- Category -->
@@ -34,7 +34,7 @@ focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
                     <div class="mt-4">
                         <x-input-label for="content" :value="__('Content')" />
                         <x-textarea-input id="content" class="block mt-1 w-full" name="content"
-                            :value="old('content')" required />
+                            :value="old('content')" />
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
                     <x-primary-button class="mt-4">Submit</x-primary-button>
