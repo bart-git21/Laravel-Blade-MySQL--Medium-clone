@@ -25,7 +25,7 @@
 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
                             <option value="">Select a category</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option @selected(old('category_id') == $category->id) value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                         <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
