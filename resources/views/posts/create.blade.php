@@ -33,8 +33,9 @@ focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full">
                     <!-- Content -->
                     <div class="mt-4">
                         <x-input-label for="content" :value="__('Content')" />
-                        <x-textarea-input id="content" class="block mt-1 w-full" name="content"
-                            :value="old('content')" />
+                        <x-textarea-input id="content" class="block mt-1 w-full" name="content">
+                            {{old('content')}}
+                        </x-textarea-input>
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
                     </div>
                     <x-primary-button class="mt-4">Submit</x-primary-button>
