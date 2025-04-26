@@ -4,8 +4,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PostController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/post/create', [PostController::class, 'create'])->middleware(['auth', 'verified'])->name('post.create');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', [PostController::class, 'index'])->name('dashboard');
+    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    Route::post('/post', [PostController::class, 'store'])->name('post.store');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -13,4 +16,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
