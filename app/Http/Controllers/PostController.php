@@ -42,6 +42,14 @@ class PostController extends Controller
             'category_id' => ['required', 'exists:categories,id'],
             'published_at' => ['nullable', 'datetime'],
         ]);
+
+        if (isset($validated["image"])) {
+            $image = $validated["image"];
+            unset($validated['image']);
+            $validated['image'] = $image->store('posts', 'public');
+        }
+        $validated['slug'] = Str::slug($validated['title'], "-");
+        $validated['user_id'] = Auth::id();
     }
 
     /**
