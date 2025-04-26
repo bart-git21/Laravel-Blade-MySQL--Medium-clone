@@ -6,7 +6,7 @@
                     @csrf
                     <!-- Image file -->
                     <div>
-                        <x-input-label for="content" :value="__('Content')" />
+                        <x-input-label for="image" :value="__('Image')" />
                         <x-text-input id="image" class="block mt-1 w-full" type="file" name="image"
                             :value="old('image')"/>
                         <x-input-error :messages="$errors->get('content')" class="mt-2" />
