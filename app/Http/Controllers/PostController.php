@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function show(string $username, Post $post)
     {
-        return 'title: ' .$post->title;
+        return view('post.show', ['post' => $post]);
     }
 
     /**
