@@ -45,7 +45,6 @@ class PostController extends Controller
 
         if (isset($validated["image"])) {
             $image = $validated["image"];
-            unset($validated['image']);
             $validated['image'] = $image->store('posts', 'public');
         }
         $validated['slug'] = Str::slug($validated['title'], "-");
