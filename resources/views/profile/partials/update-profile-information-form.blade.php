@@ -18,6 +18,11 @@
         @method('patch')
 
         <!-- Avatar -->
+        @if ($user->image)
+            <div>
+                <img src="{{ Storage::url($user->image) }}" alt="{{ $user->name }}" class="rounded-full h-20 w-20">
+            </div>
+        @endif
         <div>
             <x-input-label for="image" :value="__('Avatar')" />
             <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')" />
