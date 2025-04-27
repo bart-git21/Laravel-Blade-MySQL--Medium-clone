@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <div class="py-4">
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <x-category-tabs>No categories</x-category-tabs>
@@ -9,8 +8,6 @@
                 @empty
                     <div>Posts not found!</div>
                 @endforelse
-
-                {{ $posts->links() }}
             </div>
         </div>
     </div>
