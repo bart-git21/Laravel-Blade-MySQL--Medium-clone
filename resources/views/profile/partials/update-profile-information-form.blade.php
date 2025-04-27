@@ -19,8 +19,8 @@
 
         <!-- Avatar -->
         <div>
-            <x-input-label for="avatar" :value="__('Avatar')" />
-            <x-text-input id="avatar" class="block mt-1 w-full" type="file" name="avatar" :value="old('avatar')" />
+            <x-input-label for="image" :value="__('Avatar')" />
+            <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')" />
             <x-input-error :messages="$errors->get('content')" class="mt-2" />
         </div>
 
@@ -35,8 +35,7 @@
         <!-- Username -->
         <div>
             <x-input-label for="username" :value="__('Username')" />
-            <x-text-input id="username" name="username" type="text" class="mt-1 block w-full"
-                :value="old('username', $user->username)" required autofocus autocomplete="username" />
+            <x-text-input id="username" name="username" type="text" class="mt-1 block w-full" :value="old('username', $user->username)" required autofocus autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('username')" />
         </div>
 
