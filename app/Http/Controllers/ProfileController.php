@@ -28,8 +28,8 @@ class ProfileController extends Controller
     {
         $validated = $request->validated();
         $image = $validated['image'] ?? null;
-        if ($image) $validated['image'] = $image->store('avatars', 'public');
-        dd($validated);
+        if ($image)
+            $validated['image'] = $image->store('avatars', 'public');
 
         $request->user()->fill($validated);
 
