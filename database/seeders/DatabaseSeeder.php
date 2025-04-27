@@ -35,7 +35,5 @@ class DatabaseSeeder extends Seeder
                 'name' => $category,
             ]);
         }
-
-        Post::factory(100)->create();
     }
 }
