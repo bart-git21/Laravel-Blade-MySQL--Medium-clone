@@ -9,6 +9,8 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
+                <x-link type="a" :active="request()->is('about')" href="/about">about</x-link>
+                <x-link type="button" :active="request()->is('contact')" href="/contact">contact</x-link>
             </div>
 
             <div class="flex">
