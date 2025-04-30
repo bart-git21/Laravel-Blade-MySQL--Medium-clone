@@ -29,6 +29,10 @@
             </header>
         @endisset
 
+        @isset($test_slot)
+            {{ $test_slot }}
+        @endisset
+
         <!-- Page Content -->
         <main>
             {{ $slot }}
