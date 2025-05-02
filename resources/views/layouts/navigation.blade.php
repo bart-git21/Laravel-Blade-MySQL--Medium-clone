@@ -1,3 +1,7 @@
+@php
+    $links = ['about', 'contact'];
+@endphp
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,8 +13,13 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
-                <x-link type="a" :active="request()->is('about')" href="/about">about</x-link>
-                <x-link type="button" :active="request()->is('contact')" href="/contact">contact</x-link>
+                <ul class="shrink-0 items-center font-medium flex flex-col bg-gray-50 md:flex-row rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
+                    @foreach ($links as $link)
+                        <li class="mx-2 dark:bg-gray-800 md:dark:bg-gray-900 px-4 py-2 border border-gray-100 rounded-lg">
+                            <x-link type="a" :active="request()->is($link)" href="/{{ $link }}">{{$link}}</x-link>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
 
             <div class="flex">
