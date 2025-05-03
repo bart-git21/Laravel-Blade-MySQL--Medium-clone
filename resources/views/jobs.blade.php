@@ -3,7 +3,7 @@
     <ul>
         @forelse ($jobs as $job)
             <li>
-                <a href="/jobs">{{ $job['title'] }} - {{ $job['salary'] }}</a>
+                <a href="/jobs/{{ $job['id'] }}">{{ $job['title'] }} - {{ $job['salary'] }}</a>
             </li>
         @empty
             <p>List is empty!</p>
