@@ -1,5 +1,5 @@
 @php
-    $links = ['about', 'contact'];
+    $links = ['about', 'contact', 'jobs'];
 @endphp
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
@@ -8,16 +8,14 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
-                <ul class="shrink-0 items-center font-medium flex flex-col bg-gray-50 md:flex-row rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
+                <ul class="items-center font-medium flex flex-col bg-gray-50 md:flex-row rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:border-gray-700">
                     @foreach ($links as $link)
-                        <li class="mx-2 dark:bg-gray-800 md:dark:bg-gray-900 px-4 py-2 border border-gray-100 rounded-lg">
-                            <x-link type="a" :active="request()->is($link)" href="/{{ $link }}">{{$link}}</x-link>
-                        </li>
+                        <x-link :active="request()->is($link)" href="/{{ $link }}">{{$link}}</x-link>
                     @endforeach
                 </ul>
             </div>
