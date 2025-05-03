@@ -44,5 +44,9 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/jobs', fn() => view('jobs', ['jobs' => $jobs]))->name('jobs');
+Route::get('/jobs/{id}', function ($id) use ($jobs) {
+    $job = Arr::first($jobs, fn($job) => $job['id'] === intval($id));
+    return view('job', ['job' => $job]);
+})->name('job');
 
 require __DIR__ . '/auth.php';
