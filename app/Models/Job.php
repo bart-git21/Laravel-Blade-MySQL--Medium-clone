@@ -27,6 +27,10 @@ class Job
     }
 
     public static function find($id) {
-        return Arr::first(self::all(), fn($job) => $job['id'] === intval($id));
+        $job = Arr::first(self::all(), fn($job) => $job['id'] === intval($id));
+
+        if (! $job) return abort(404);
+
+        return $job;
     }
 }
