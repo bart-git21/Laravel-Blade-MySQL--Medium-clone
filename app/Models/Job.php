@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Models;
+
+use Illuminate\Support\Arr;
 class Job
 {
     public static function all(): array
@@ -22,5 +24,9 @@ class Job
                 'salary' => '2000000',
             ]
         ];
+    }
+
+    public static function find($id) {
+        return Arr::first(self::all(), fn($job) => $job['id'] === intval($id));
     }
 }
